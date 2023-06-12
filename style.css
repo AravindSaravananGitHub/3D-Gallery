@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    justify-content: center;
+    background: url(background_img.jpg);
+    background-size: contain;
+    overflow: hidden;
+}
+
+.image-container{
+    position: relative;
+    width:195px;
+    height:150px;
+    transform-style:preserve-3d;
+    transform:perspective(1000px) rotateY(0deg);
+    transition: transform 0.7s;
+}
+.image-container span{
+    position:absolute;
+    top:0;
+    left: 0;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(400px);
+}
+.image-container span img{
+    border-radius: 20px;
+}
+#five,
+#six,
+#seven,
+#eight,
+#four,
+#three,
+#two,
+#one{
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    mix-blend-mode: color-burn;
+}
+
+.btn-container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.btn{
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    background: rgb(97,113,113);
+    background: rgb(97,113,113);
+    background: linear-gradient(312deg, rgba(97,113,113,1) 0%, rgba(220,244,75,1) 45%, rgba(21,215,210,1) 100%);
+    border-radius: 5px;
+    color:black;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+    
+}
+.btn:hover{
+    filter: brightness(1.5);
+    transform: all ease .1s;
+}
+.btn:active{
+    box-shadow: rgba(255, 245, 245, 0.19) 0px 10px 20px, rgba(255, 255, 255, 0.23) 0px 6px 6px;
+}
+@media (max-width:668px) {
+    body{
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background-size: contain;
+    }
+    .image-container{
+        width:150px;
+        height:100px;
+    }
+    .image-container span img{
+        width:150px;
+        height:105px;
+    }
+}
